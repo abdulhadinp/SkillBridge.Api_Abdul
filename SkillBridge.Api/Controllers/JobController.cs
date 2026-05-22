@@ -4,7 +4,7 @@ namespace SkillBridge.Api.Controllers;
 [ApiController]
 [Route("[controller]")]
 
-public class JobController: ControllerBase
+public class JobController : ControllerBase
 {
     public readonly IJobRepository _jobRepository;
     public JobController(IJobRepository jobRepository)
@@ -16,5 +16,16 @@ public class JobController: ControllerBase
     public IEnumerable<JobDto> GetJobList()
     {
         return _jobRepository.GetJobListAsync().Result;
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetJobById(int id)
+    {
+        var job = await _jobRepository.GetJobByIdAsync(id);
+        if (job == null)
+        {
+            return NotFound();
+        }
+        return Ok(job);
     }
 }

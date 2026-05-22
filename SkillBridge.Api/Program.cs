@@ -9,8 +9,9 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddScoped<IJobRepository, JobRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddDbContext<SkillBridgedbcontext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // builder.Services.AddScoped<IJobRepository, JobRepository>();
 
