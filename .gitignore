@@ -1,0 +1,60 @@
+## .NET Build Artifacts
+bin/
+obj/
+*.user
+.vs/
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Visual Studio / VS Code
+.vscode/
+.idea/
+*.swp
+
+## Sensitive Configuration
+appsettings.Development.json
+appsettings.Production.json
+secrets.json
+
+## Published output
+publish/
+*.nupkg
+
+## NuGet
+.nuget/
+packages/
+*.nuspec
+
+## Docker volumes (local data only)
+data/
+mssql-data/
+
+## Uploads folder contents (keep folder with .gitkeep)
+SkillBridge.Api/wwwroot/uploads/*
+!SkillBridge.Api/wwwroot/uploads/.gitkeep
+
+## Node modules (frontend)
+skillbridge-frontend/node_modules/
+skillbridge-frontend/dist/
+skillbridge-frontend/.env
+skillbridge-frontend/.env.local
+
+## OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+## SQLite / local DB files
+*.db
+*.sqlite
+*.sqlite3
+
+## Test results
+TestResults/
+coverage.xml
+*.trx
+
+## Logs
+*.log
+logs/
