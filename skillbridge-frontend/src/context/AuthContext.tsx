@@ -4,7 +4,7 @@ type User = {
     id: number;
     email: string;
     fullName: string;
-    type: 'JobSeeker' | 'Admin';
+    type: 'Candidate' | 'Admin';
     token: string;
 };
 
