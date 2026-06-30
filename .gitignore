@@ -58,3 +58,12 @@ coverage.xml
 ## Logs
 *.log
 logs/
+
+## Assignment and generation files
+*.docx
+~$*.docx
+diagrams/
+screenshots/
+*.py
+SkillBridge_Agentic_Prompt.md
+skillbridge-frontend/.vite/

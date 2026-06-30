@@ -33,8 +33,8 @@ export default function AdminDashboard() {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await publicApi.get<Job[]>("/api/Job");
-        setJobs(response.data);
+        const response = await publicApi.get("/api/Job");
+        setJobs(response.data.jobs ? response.data.jobs : response.data);
       } catch (error) {
         console.error("Error fetching jobs:", error);
       } finally {

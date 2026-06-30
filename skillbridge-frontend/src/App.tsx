@@ -54,7 +54,7 @@ function App() {
           <Route
             path="/candidate/dashboard"
             element={
-              <ProtectedRoute requiredRole="Candidate">
+              <ProtectedRoute requiredRole="JobSeeker">
                 <CandidateDashboard />
               </ProtectedRoute>
             }
@@ -62,7 +62,7 @@ function App() {
           <Route
             path="/candidate/profile"
             element={
-              <ProtectedRoute requiredRole="Candidate">
+              <ProtectedRoute requiredRole="JobSeeker">
                 <CandidateProfile />
               </ProtectedRoute>
             }
@@ -70,7 +70,7 @@ function App() {
           <Route
             path="/candidate/applications"
             element={
-              <ProtectedRoute requiredRole="Candidate">
+              <ProtectedRoute requiredRole="JobSeeker">
                 <TrackApplications />
               </ProtectedRoute>
             }
@@ -78,7 +78,7 @@ function App() {
           <Route
             path="/jobs/:id/apply"
             element={
-              <ProtectedRoute>
+              <ProtectedRoute requiredRole="JobSeeker">
                 <ApplyJob />
               </ProtectedRoute>
             }

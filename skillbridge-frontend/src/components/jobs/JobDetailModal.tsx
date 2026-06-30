@@ -49,7 +49,7 @@ export default function JobDetailModal({
       return;
     }
 
-    alert(`Application submitted for ${job?.title}!`);
+    navigate(`/jobs/${job?.id}/apply`);
     onClose();
   };
 

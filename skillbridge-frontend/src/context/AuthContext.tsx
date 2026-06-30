@@ -20,18 +20,21 @@ type AuthContextType = {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-    const [user, setUser] = useState<User | null>(null);
-
-    useEffect(() => {
+    const [user, setUser] = useState<User | null>(() => {
         const stored = localStorage.getItem("user");
         if (stored) {
             try {
-                setUser(JSON.parse(stored));
+                return JSON.parse(stored);
             } catch {
                 localStorage.removeItem("user");
                 localStorage.removeItem("token");
             }
         }
+        return null;
+    });
+
+    useEffect(() => {
+        // Optional: listen for storage events to sync across tabs
     }, []);
 
     const login = (userData: User) => {

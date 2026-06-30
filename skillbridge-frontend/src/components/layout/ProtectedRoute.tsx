@@ -3,7 +3,7 @@ import { useAuth } from "../../context/AuthContext";
 
 type Props = {
   children: React.ReactNode;
-  requiredRole?: 'Admin' | 'Candidate';
+  requiredRole?: 'Admin' | 'JobSeeker';
 };
 
 export const ProtectedRoute: React.FC<Props> = ({ children, requiredRole }) => {

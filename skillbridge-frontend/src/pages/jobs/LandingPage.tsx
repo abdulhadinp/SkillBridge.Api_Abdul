@@ -39,8 +39,9 @@ export default function LandingPage() {
     const fetchJobs = async () => {
       try {
         setLoading(true);
-        const response = await publicApi.get<Job[]>("/api/Job");
-        setJobs(response.data);
+        const response = await publicApi.get("/api/Job");
+        // Handle both paginated response { jobs: [], totalCount: n } and flat array
+        setJobs(response.data.jobs ? response.data.jobs : response.data);
       } catch (error) {
         console.error("Error fetching jobs:", error);
       } finally {
