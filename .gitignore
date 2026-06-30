@@ -67,3 +67,8 @@ screenshots/
 *.py
 SkillBridge_Agentic_Prompt.md
 skillbridge-frontend/.vite/
+presentation.pdf
+presentation_slides/
+*.pptx
+~$*.pptx
+generate_presentation.py
